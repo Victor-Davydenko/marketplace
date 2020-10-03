@@ -1,0 +1,9 @@
+.App{
+  display: flex;
+  flex-direction: column;
+}
+.main_content_wrapper{
+  min-height: 100vh;
+  background: #ccc;
+  flex-grow: 1;
+}

@@ -1,0 +1,27 @@
+.single_ad{
+  margin-bottom: 15px;
+  border-radius: 3px;
+  .ad_image_holder{
+    height: 200px;
+    width: 200px;
+    img{
+      width: 100%;
+      height: inherit;
+      display: block;
+      object-fit: cover;
+    }
+  }
+  .ad_bottom_row{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+    &:hover{
+      text-decoration: none;
+      color: black;
+    }
+  }
+}

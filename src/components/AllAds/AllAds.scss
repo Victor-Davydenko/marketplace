@@ -1,0 +1,10 @@
+.ad_image_holder{
+  width: 200px;
+  height: 200px;
+  img{
+    display: block;
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+  }
+}

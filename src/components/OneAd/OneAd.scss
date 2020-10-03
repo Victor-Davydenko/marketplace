@@ -1,0 +1,10 @@
+.oneAd{
+  background: white;
+  min-height: 650px;
+  .comments_visible{
+    display: block;
+  }
+  .comments_hide{
+    display: none;
+  }
+}

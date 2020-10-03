@@ -1,0 +1,29 @@
+.header{
+  background: #002f34;
+  .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+  }
+  .profile_link{
+    margin-right: 35px;
+    color: white;
+    text-decoration: none;
+    &:last-child{
+      margin-left: 35px;
+    }
+  }
+  .logo_link{
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+.wrapper{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding:  25px;
+}
