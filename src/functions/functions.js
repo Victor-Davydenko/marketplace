@@ -21,20 +21,14 @@ const gql = getGQL('http://marketplace.asmer.fs.a-level.com.ua/graphql',{Authori
 let d = ({1: path}, obj) => {
     path = path.split('.')
     for (let key of path) {
-        if (obj[key] != undefined) {
+        if (obj[key] !== undefined && obj[key] !== null ) {
             obj = obj[key]
         } else {
-            return obj
+            return undefined
         }
     }
     return obj
 }
 
-function isEmpty(obj) {
-    for (let key in obj) {
-        return false;
-    }
-    return true;
-}
 
-export  {gql, getGQL, d, isEmpty}
+export  {gql, getGQL, d}

@@ -8,3 +8,22 @@
     display: none;
   }
 }
+
+.oneAd_image_holder{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .add_image_holder{
+    flex-basis: 30%;
+
+    img{
+      display: block;
+      width: 100%;
+      height: inherit;
+      object-fit: cover;
+
+    }
+  }
+}
+.answerTo_holder{
+}

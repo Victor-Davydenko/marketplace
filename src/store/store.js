@@ -24,15 +24,23 @@ const authAction = (token)=>{
     }
 }
 
+const registrationAction = (login, password)=>{
+    return actionPromise('registration',gql(`mutation reg{
+             createUser(login: "${login}", password: "${password}"){
+                _id
+                }
+             }`))
+}
+
 const logoutAction = ()=>{
     return {
-        type:'LOGGOUT'
+        type:'LOGOUT'
     }
 }
 
 const ActionAllAd = ()=>{
     return actionPromise('allAd', gql(`query goods {
-            AdFind(query: "[{}]") {
+            AdFind(query: "[{},{\\"sort\\":[{\\"_id\\":-1}]}]") {
                 _id, 
                 title,
                 comments{
@@ -58,7 +66,7 @@ const ActionAllAd = ()=>{
 
 const actionGetOneAd = (id) => {
     return actionPromise('oneAd', gql(`query goods{
-        AdFindOne(query: "[{\\"_id\\": \\"5dc9bfae79064d79bb6ba068 \\"}]") {
+        AdFindOne(query: "[{\\"_id\\": \\"${id}\\"}]") {
        
             _id,
             title,
@@ -103,9 +111,9 @@ const actionGetOneAd = (id) => {
     }`))
 }
 
-const actionGetUser = () =>{
+const actionGetUser = (id) =>{
     return actionPromise('User', gql(`query User{
-        UserFindOne(query: "[{\\"_id\\": \\"5f5901476ab8aa131017a59f\\"}]") {
+        UserFindOne(query: "[{\\"_id\\": \\"${id}\\"}]") {
        
             _id,
             createdAt,
@@ -125,6 +133,40 @@ const actionGetUser = () =>{
           
         }
     }`))
+}
+
+const actionCreateAd = (title,description,price,address,images)=>{
+    return actionPromise('CreateAd',gql(
+        `mutation createAd($input: AdInput!){
+            AdUpsert(ad: $input) {
+                _id,
+                title,
+                description,
+                price,
+                address,
+                images{
+                _id
+                }
+            }
+        }`, {input:{title: title, description: description, price: +price, address:address, images:images}})
+    )
+}
+
+const actionUpload = (form)=>{
+    return actionPromise('upload',fetch('http://marketplace.asmer.fs.a-level.com.ua/upload', {
+        method: "POST",
+        headers: localStorage.authToken ? {Authorization: 'Bearer ' + localStorage.authToken} : {},
+        body: new FormData(form)
+    }).then(res=>res.json()))
+}
+
+const actionChangeUserInfo = (id,nick,phones,addresses,avatar)=>{
+    return actionPromise('changeUserInfo',gql(`mutation updateUserInfo($input: UserInput){
+      UserUpsert(user: $input){
+        _id,
+        login
+      }
+    }`,{input: {_id:id,nick:nick,phones: phones, addresses: addresses,avatar:avatar}}))
 }
 
 const pendingAction =(name)=>{
@@ -175,7 +217,8 @@ const authReducer =(state, action)=>{
             token:action.token
         }
     }
-    if(action.type === 'LOGGOUT'){
+    if(action.type === 'LOGOUT'){
+        console.log('logout')
         localStorage.removeItem('authToken')
         return {
 
@@ -184,6 +227,7 @@ const authReducer =(state, action)=>{
     }
     return state
 }
+
 
 const promiseReducer = (state={}, {type, name, status, payload, error})=>{
 
@@ -214,5 +258,17 @@ if(localStorage.authToken) {
 }
 
 
-export {store, authAction,logoutAction,pendingAction,fullfilledAction,rejectedAction,ActionAllAd,actionGetOneAd,actionGetUser}
+export {store, authAction,
+    logoutAction,
+    registrationAction,
+    pendingAction,
+    fullfilledAction,
+    rejectedAction,
+    ActionAllAd,
+    actionGetOneAd,
+    actionGetUser,
+    actionCreateAd,
+    actionPromise,
+    actionUpload,
+    actionChangeUserInfo}
 

@@ -1,18 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
-import COneAd from '../../components/OneAd/OneAd'
+import OneAd from '../../components/OneAd/OneAd'
+import {connect} from "react-redux";
+import {actionGetOneAd} from "../../store/store";
 
 
 
-const OneAdPage = (props)=> {
-    console.log(props)
+const OneAdPage = ({data,match: {params: {id}}, getOneAd})=> {
+    console.log(id, data)
+    useEffect(()=>{
+        async function fetchData() {
+            await getOneAd(id)
+        }
+        fetchData()
+    },[id])
     return(
         <div>
             <Header/>
             <div className='main_content_wrapper'>
                 <div className='wrapper'>
-                    <COneAd/>
+                    <OneAd/>
                 </div>
             </div>
             <Footer/>
@@ -21,4 +29,5 @@ const OneAdPage = (props)=> {
     );
 }
 
-export default OneAdPage
+
+export  default connect(null, {getOneAd:actionGetOneAd})(OneAdPage)

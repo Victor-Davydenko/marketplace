@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {connect} from "react-redux";
-import {ActionAllAd, actionGetOneAd, store} from "../../store/store";
+import {ActionAllAd} from "../../store/store";
 import Preloader from "../Preloader/Preloader";
 import {d} from '../../functions/functions'
 import {Link} from 'react-router-dom'
@@ -10,10 +10,7 @@ import {Link} from 'react-router-dom'
 const Ad = ({data}) =>{
     const issued = new Date(+data.createdAt).toLocaleDateString()
     return(
-        <a href='#' className='list-group-item single_ad' onClick={ async (e,id)=>{
-            // await store.dispatch(actionGetOneAd(data._id))
-             console.log(data._id)
-        }} >
+        <li href='#' className='list-group-item single_ad'>
             <Link to={'/singleAd/' + data._id}>
                 <div>
                      <h3>{data.title}</h3>
@@ -28,14 +25,17 @@ const Ad = ({data}) =>{
                     </div>
                 </div>
             </Link>
-        </a>
+        </li>
     );
 }
 
 
 const AllAd = ({data, getData}) => {
-    useEffect(()=> {
-        getData()
+    useEffect(()=>{
+        async function fetchData() {
+            await getData()
+        }
+        fetchData()
     },[])
     console.log(data)
 
@@ -59,14 +59,15 @@ const AllAd = ({data, getData}) => {
         if(data.status === 'fulfilled'){
             console.log(data)
             return (
+
                 <ul className='list-group'>
-                    {data.payload.AdFind.map((ad) => <Ad data={ad} >{ad.title}</Ad>)}
+                    {data.payload.AdFind.map((ad) => <Ad data={ad} key={ad._id} >{ad.title}</Ad>)}
                 </ul>
             )
         }
     }
 }
 
-const CAllAd = connect((s)=>({data: s.promiseReducer.allAd} ), {getData:ActionAllAd})(AllAd)
+const CAllAd = connect((s)=>({data: d`${s}promiseReducer.allAd`} ), {getData:ActionAllAd})(AllAd)
 
 export default CAllAd

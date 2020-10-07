@@ -3,7 +3,11 @@
   flex-direction: column;
 }
 .main_content_wrapper{
-  min-height: 100vh;
+  min-height: 100%;
   background: #ccc;
   flex-grow: 1;
+  .wrapper{
+    background: white;
+    min-height: 100%;
+  }
 }

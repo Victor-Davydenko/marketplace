@@ -1,37 +1,33 @@
 import React  from 'react';
 import './RegistrationPage.scss';
 import Header from "../../components/header/header";
-import Main from "../../components/main/main";
 import Footer from "../../components/footer/footer";
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+import {connect} from "react-redux";
+import {registrationAction} from '../../store/store'
+import {getGQL} from "../../functions/functions";
 
 
-const RegistrationPage = ()=>{
+const RegistrationPage = ({dataReg,reg})=>{
     const registration = async (l,p)=>{
-        let registrationData = await fetch('http://marketplace.asmer.fs.a-level.com.ua/graphql', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                query: `mutation reg{
-            createUser(login:${l},password:${p}){_id}
+        let registrationData = await getGQL('http://marketplace.asmer.fs.a-level.com.ua/graphql')
+        (`mutation reg{
+            createUser(login:"${l}",password:"${p}"){_id}
             }
-            `
-            })
-        })
-        let res = await registrationData.json()
-        console.log(res)
+            `)
+
     }
     return(
         <React.Fragment>
             <Header />
-            <Main>
-                <RegistrationForm onRegister={(l,p)=>registration(l,p)}></RegistrationForm>
-            </Main>
+            <div className='main_content_wrapper'>
+                <div className='wrapper'>
+                    <RegistrationForm onRegister={(login,password)=>registration(login,password)}/>
+                </div>
+            </div>
             <Footer />
         </React.Fragment>
     );
 }
 
-export default RegistrationPage
+export default connect((s)=>({dataReg: s.promiseReducer.registration}),{reg:registrationAction})(RegistrationPage)

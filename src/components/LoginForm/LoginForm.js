@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {getGQL} from "../../functions/functions";
 import {store,authAction,logoutAction,pendingAction,fullfilledAction,rejectedAction} from "../../store/store";
+import {Link} from 'react-router-dom'
 
 
 const LoginForm = ({onLogin, onLogout}) => {
@@ -41,34 +42,33 @@ const LoginForm = ({onLogin, onLogout}) => {
 
             </div>
 
-            <a to='/registration' type="button" className="btn btn-info button" onClick={() => onLogin(name, surName)}
-               disabled={buttonState}>Войти</a>
-            <button onClick={onLogout}>Log out</button>
+            <button type="button" className="btn btn-info button" onClick={async ()=>{
+                  await  onLogin(name, surName)}}
+               disabled={buttonState}>Войти</button>
+
         </div>
     );
 
 }
 
-const LoginPage = ({cn,authAction,logoutAction,pendingAction,fullfilledAction,rejectedAction}) => {
+const LoginPage = ({cn,authAction,logoutAction}) => {
     const login = async (l, p) => {
         try {
-            pendingAction()
+            // pendingAction()
             let loginData = await getGQL('http://marketplace.asmer.fs.a-level.com.ua/graphql')
             (`query auth {
             login(login: "${l}", password: "${p}")
             }`)
             const token = loginData.login
-            authAction(token)
-            fullfilledAction(loginData)
+            await authAction(token)
+            // fullfilledAction(loginData)
             console.log(store.getState())
         }
         catch (e) {
-            rejectedAction(e)
+            // rejectedAction(e)
             console.log(store.getState())
         }
     }
-
-
     const logout = ()=>{
         logoutAction()
         console.log(store.getState())
