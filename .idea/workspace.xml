@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4218942b-034b-4fce-a7a6-bb850c8268a2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/AdCreator/AdCreaator.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AdCreator/AdCreator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AdCreator/Uploader/Upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/User/User.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllAds/AllAds.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllAds/AllAds.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OneAd/OneAd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OneAd/OneAd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OneAd/OneAd.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OneAd/OneAd.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/OneAdPage/OneAdPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/OneAdPage/OneAdPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/RegistrationPage/RegistrationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RegistrationPage/RegistrationPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/UserPage/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UserPage/UserPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
-    </list>
+    <list default="true" id="4218942b-034b-4fce-a7a6-bb850c8268a2" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -211,7 +187,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -264,7 +240,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../online-store-react-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -307,18 +283,17 @@
       <workItem from="1601814573113" duration="76776000" />
       <workItem from="1602067802006" duration="3134000" />
       <workItem from="1602071724793" duration="9799000" />
-      <workItem from="1602085654996" duration="10280000" />
+      <workItem from="1602085654996" duration="10933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188420000" />
+    <option name="totallyTimeSpent" value="189073000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14264487" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14264487" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Learn" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -332,7 +307,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="GraphQL" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.19480519" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.19480519" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
