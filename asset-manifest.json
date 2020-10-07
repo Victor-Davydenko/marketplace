@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/marketplace/static/css/main.dd3a3a0b.chunk.css",
-    "main.js": "/marketplace/static/js/main.a6c7b2a2.chunk.js",
-    "main.js.map": "/marketplace/static/js/main.a6c7b2a2.chunk.js.map",
+    "main.js": "/marketplace/static/js/main.7a952098.chunk.js",
+    "main.js.map": "/marketplace/static/js/main.7a952098.chunk.js.map",
     "runtime-main.js": "/marketplace/static/js/runtime-main.b4440dba.js",
     "runtime-main.js.map": "/marketplace/static/js/runtime-main.b4440dba.js.map",
     "static/js/2.66e404aa.chunk.js": "/marketplace/static/js/2.66e404aa.chunk.js",
     "static/js/2.66e404aa.chunk.js.map": "/marketplace/static/js/2.66e404aa.chunk.js.map",
     "index.html": "/marketplace/index.html",
-    "precache-manifest.0b087a5d9002bef034b3e350dfc56086.js": "/marketplace/precache-manifest.0b087a5d9002bef034b3e350dfc56086.js",
+    "precache-manifest.4c10be54e3ab59871507a1db97a24650.js": "/marketplace/precache-manifest.4c10be54e3ab59871507a1db97a24650.js",
     "service-worker.js": "/marketplace/service-worker.js",
     "static/css/main.dd3a3a0b.chunk.css.map": "/marketplace/static/css/main.dd3a3a0b.chunk.css.map",
     "static/js/2.66e404aa.chunk.js.LICENSE.txt": "/marketplace/static/js/2.66e404aa.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b4440dba.js",
     "static/js/2.66e404aa.chunk.js",
     "static/css/main.dd3a3a0b.chunk.css",
-    "static/js/main.a6c7b2a2.chunk.js"
+    "static/js/main.7a952098.chunk.js"
   ]
 }
